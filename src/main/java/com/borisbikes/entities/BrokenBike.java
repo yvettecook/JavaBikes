@@ -3,14 +3,15 @@ package com.borisbikes.entities;
 /**
  * Created by yvettecook on 18/11/2014.
  */
-public class BrokenBike extends Bike{
+public class BrokenBike extends AbstractBike {
 
-    public BrokenBike(Bike bike) {
+    public BrokenBike(AbstractBike bike) {
         this.bike = bike;
     }
 
-    public boolean isBroken() {
-        return true;
+    @Override
+    public void ride() throws Exception{
+        throw new Exception();
     }
 
 

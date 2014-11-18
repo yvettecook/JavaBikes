@@ -1,5 +1,7 @@
 package com.borisbikes.entities;
 
+import junit.framework.TestCase;
+import org.junit.Before;
 import org.junit.Test;
 
 import static junit.framework.Assert.assertTrue;
@@ -10,22 +12,32 @@ import static junit.framework.TestCase.assertFalse;
  */
 public class WorkingBikeTest {
 
+    WorkingBike bike;
+
+    @Before
+    public void setUp() {
+        bike = new WorkingBike();
+    }
+
     @Test public void
         isNotBroken() {
-        WorkingBike bike = new WorkingBike();
-        assertFalse(bike.isBroken());
+            assertFalse(bike.isBroken());
     }
 
     @Test public void
         canBreak() {
-        WorkingBike bike = new WorkingBike();
-        assertTrue(bike.smash().isBroken());
+            assertTrue(bike.smash().isBroken());
     }
 
     @Test public void
-    canBeBrokenMoreTimes() {
-        WorkingBike bike = new WorkingBike();
-        assertFalse(bike.smash().smash().repair().repair().isBroken());
+        canBeBrokenMoreTimes() {
+            assertFalse(bike.smash().smash().repair().repair().isBroken());
+    }
+
+    @Test public void
+        canBeRidden() {
+            bike.ride();
+            assertTrue(bike.moving());
     }
 
 
