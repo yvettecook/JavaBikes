@@ -22,4 +22,11 @@ public class WorkingBikeTest {
         assertTrue(bike.smash().isBroken());
     }
 
+    @Test public void
+    canBeBrokenMoreTimes() {
+        WorkingBike bike = new WorkingBike();
+        assertFalse(bike.smash().smash().repair().repair().isBroken());
+    }
+
+
 }

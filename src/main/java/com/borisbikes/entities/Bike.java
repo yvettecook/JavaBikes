@@ -5,6 +5,15 @@ package com.borisbikes.entities;
  */
 public abstract class Bike {
 
+    Bike bike;
+
     public abstract boolean isBroken();
 
+    public Bike smash() {
+        return new BrokenBike(this);
+    };
+
+    public Bike repair() {
+        return bike;
+    }
 }

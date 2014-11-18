@@ -10,8 +10,7 @@ import static org.junit.Assert.assertEquals;
  */
 public class BrokenBikeTest {
 
-    @Test
-    public void
+    @Test public void
     isBroken() {
         BrokenBike bike = new BrokenBike(new WorkingBike());
         assertTrue(bike.isBroken());
@@ -23,4 +22,6 @@ public class BrokenBikeTest {
         BrokenBike broken = new BrokenBike(bike);
         assertEquals(bike, broken.repair());
     }
+
+
 }

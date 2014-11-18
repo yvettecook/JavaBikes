@@ -5,10 +5,6 @@ package com.borisbikes.entities;
  */
 public class WorkingBike extends Bike {
 
-    public Bike smash() {
-        return new BrokenBike(this);
-    }
-
     @Override
     public boolean isBroken() {
         return false;
